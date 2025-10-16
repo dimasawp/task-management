@@ -41,7 +41,7 @@ class TaskController extends Controller {
             'description' => $request->description,
             'status' => $request->status,
             'deadline' => $request->deadline,
-            'created_by' => auth('api')->id(),
+            'created_by' => auth('api')->user()->name,
         ]);
 
         return response()->json($task, 201);

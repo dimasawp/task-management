@@ -14,7 +14,7 @@ return new class extends Migration {
             $table->foreignId('user_id')->constrained('users', 'user_id')->onDelete('cascade');
             $table->string('title');
             $table->text('description')->nullable();
-            $table->enum('status', ['To Do', 'In Progess', 'Done'])->default('To Do');
+            $table->enum('status', ['To Do', 'In Progress', 'Done'])->default('To Do');
             $table->date('deadline')->nullable();
             $table->string('created_by');
             $table->timestamps();
