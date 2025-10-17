@@ -6,6 +6,10 @@ Aplikasi fullstack untuk mengelola dan memonitor tugas harian karyawan dan siste
 
 ## 🚀 Cara Menjalankan
 
+[Note]: .env lokal silahkan disesuaikan dengan environment lokal dan untuk docker password defaultnya: secret123
+
+### 1. Run di Lokal
+
 ### Backend
 
 1. cd backend
@@ -24,6 +28,13 @@ Aplikasi fullstack untuk mengelola dan memonitor tugas harian karyawan dan siste
 3. npm install
 4. npm run dev
 
+### 2. Run di Docker
+
+```bash
+docker compose up -d --build
+docker compose exec backend php artisan migrate
+```
+
 ## ⚙️ Teknologi
 
 -   Laravel 12 (Backend)
@@ -31,6 +42,7 @@ Aplikasi fullstack untuk mengelola dan memonitor tugas harian karyawan dan siste
 -   PostgreSQL (Database)
 -   JWT Auth
 -   Axios + React Router DOM
+-   Docker
 
 ## 🔑 Login Dummy
 
@@ -44,6 +56,6 @@ Aplikasi fullstack untuk mengelola dan memonitor tugas harian karyawan dan siste
 
 ## 🖼️ Screenshot Tampilan
 
--   login.png
--   dashboard.png
--   task_crud.png
+-   [login.png](screenshots/login.png)
+-   [dashboard.png](screenshots/dashboard.png)
+-   [task_crud.png](screenshots/task_crud.png)
