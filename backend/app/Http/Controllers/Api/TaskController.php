@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class TaskController extends Controller {
     public function index(Request $request) {
-        $query = Task::where('user_id', auth('api')->id());
+        $query = Task::where('user_id', auth()->id());
 
         // Filter by status 
         if ($request->has('status')) {
@@ -36,12 +36,12 @@ class TaskController extends Controller {
         ]);
 
         $task = Task::create([
-            'user_id' => auth('api')->id(),
+            'user_id' => auth()->id(),
             'title' => $request->title,
             'description' => $request->description,
             'status' => $request->status,
             'deadline' => $request->deadline,
-            'created_by' => auth('api')->user()->name,
+            'created_by' => auth()->user()->name,
         ]);
 
         return response()->json($task, 201);
@@ -49,7 +49,7 @@ class TaskController extends Controller {
 
     public function show($id) {
         $task = Task::where('task_id', $id)
-            ->where('user_id', auth('api')->id())
+            ->where('user_id', auth()->id())
             ->first();
 
         if (!$task) {
@@ -60,7 +60,7 @@ class TaskController extends Controller {
     }
 
     public function update(Request $request, $id) {
-        $task = Task::where('user_id', auth('api')->id())
+        $task = Task::where('user_id', auth()->id())
             ->where('task_id', $id)
             ->first();
 
@@ -81,7 +81,7 @@ class TaskController extends Controller {
     }
 
     public function destroy($id) {
-        $task = Task::where('user_id', auth('api')->id())
+        $task = Task::where('user_id', auth()->id())
             ->where('task_id', $id)
             ->first();
 
