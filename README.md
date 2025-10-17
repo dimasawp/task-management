@@ -6,7 +6,10 @@ Aplikasi fullstack untuk mengelola dan memonitor tugas harian karyawan dan siste
 
 ## 🚀 Cara Menjalankan
 
-[Note]: .env lokal silahkan disesuaikan dengan environment lokal dan untuk docker password defaultnya: secret123
+[Note]:
+
+1. Pastikan sudah menginstal Composer, PHP ≥ 8.2, Node.js ≥ 22, dan Docker Desktop (jika ingin menjalankan melalui container).
+2. .env lokal silahkan disesuaikan dengan environment lokal dan untuk docker password defaultnya: secret123
 
 ### 1. Run di Lokal
 
@@ -18,7 +21,7 @@ Aplikasi fullstack untuk mengelola dan memonitor tugas harian karyawan dan siste
 4. php artisan key:generate
 5. php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"
 6. php artisan jwt:secret
-7. php artisan migrate
+7. php artisan migrate --seed
 8. php artisan serve
 
 ### Frontend
@@ -32,7 +35,7 @@ Aplikasi fullstack untuk mengelola dan memonitor tugas harian karyawan dan siste
 
 ```bash
 docker compose up -d --build
-docker compose exec backend php artisan migrate
+docker compose exec backend php artisan migrate --seed
 ```
 
 ## ⚙️ Teknologi
@@ -56,6 +59,14 @@ docker compose exec backend php artisan migrate
 
 ## 🖼️ Screenshot Tampilan
 
--   [login.png](screenshots/login.png)
--   [dashboard.png](screenshots/dashboard.png)
--   [task_crud.png](screenshots/task_crud.png)
+Berikut beberapa tampilan dari aplikasi Task Management System:
+
+-   [Login Page](https://github.com/dimasawp/task-management/blob/main/screenshots/login.png)
+-   [Dashboard](https://github.com/dimasawp/task-management/blob/main/screenshots/dashboard.png)
+-   [Task CRUD](https://github.com/dimasawp/task-management/blob/main/screenshots/task_crud.png)
+
+## 🧩 API Collection
+
+Untuk menguji endpoint API, kamu dapat menggunakan file Postman Collection berikut:
+
+📁 [Task Management Postman Collection](https://github.com/dimasawp/task-management/blob/main/task_management.postman_collection.json)
